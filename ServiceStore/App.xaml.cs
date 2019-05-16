@@ -13,5 +13,6 @@ namespace ServiceStore
     /// </summary>
     public partial class App : Application
     {
+
     }
 }

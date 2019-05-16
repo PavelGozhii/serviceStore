@@ -1,0 +1,18 @@
+﻿<Window x:Class="ServiceStore.EntityControl.ITelephone.TelephoneForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ServiceStore.EntityControl.ITelephone"
+        mc:Ignorable="d"
+        Title="TelephoneForm" Height="450" Width="800">
+    <Grid Background="#FFEEEEEE">
+        <TextBox x:Name="LastIdTextBox" TextAlignment="Center" HorizontalAlignment="Center" Height="23" Margin="365,180,247,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="180" Visibility="Hidden"/>
+        <TextBlock x:Name="TelephoneTextBlock" HorizontalAlignment="Center" Margin="260,184,432,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="1.541,0.376" TextAlignment="Center" Width="100"><Run Text="IMEI"/></TextBlock>
+        <TextBox x:Name="TelephoneTextBox" TextAlignment="Center" HorizontalAlignment="Center" Height="23" Margin="365,180,247,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="180"/>
+        <Button x:Name="ActionBtn" Content="Create" HorizontalAlignment="Center" Margin="335,300,327,0" VerticalAlignment="Top" Width="130" Click="ActionBtn_Click"/>
+        <TextBlock HorizontalAlignment="Left" Margin="255,235,0,0" TextWrapping="Wrap" Text="TelephoneModel" VerticalAlignment="Top" TextAlignment="Center" Width="100"/>
+        <ComboBox x:Name="TelephoneModelComboBox" HorizontalAlignment="Left" Margin="365,225,0,0" VerticalAlignment="Top" Width="180"/>
+
+    </Grid>
+</Window>
