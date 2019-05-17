@@ -32,6 +32,18 @@ namespace ServiceStore.EntityControl.ITelephoneModel
             telephoneModelDao = new TelephoneModelDao(connection);
             this.connection = connection;
             DataGrid();
+            if (DBConnection.id.Equals("Seller"))
+            {
+                UpdateBtn.Visibility = Visibility.Hidden;
+                DeleteBtn.Visibility = Visibility.Hidden;
+                Add.Visibility = Visibility.Hidden;
+                Name.Width = 170;
+                Category.Width = 90;
+                OS.Width = 80;
+                Memory.Width = 70;
+                Processor.Width = 170;
+                Trademark.Width = 110;
+            }
 
         }
 

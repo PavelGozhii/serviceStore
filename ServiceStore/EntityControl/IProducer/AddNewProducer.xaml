@@ -5,21 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ServiceStore.EntityControl.IProducer"
         mc:Ignorable="d"
-        Title="AddNewProducer" Height="450" Width="800">
+        Title="AddNewProducer" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid Background="#FFEEEEEE">
         <TextBlock x:Name="C_Producer" Text="Producer" HorizontalAlignment="Center" Margin="280,89,402,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="1.541,0.376" TextAlignment="Center" Width="100"/>
-        <TextBox x:Name="ProducerTextBox" TextAlignment="Center" HorizontalAlignment="Center" Height="23" Margin="390, 80, 202, 0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+        <TextBox x:Name="ProducerTextBox" TextAlignment="Center" HorizontalAlignment="Center" Height="30" Margin="390, 80, 202, 0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
         <TextBlock x:Name="Director" HorizontalAlignment="Center" Margin="280,125,412,0" TextWrapping="Wrap" Text="Director" VerticalAlignment="Top" RenderTransformOrigin="0.156,0.375" TextAlignment="Center" Width="100"/>
-        <TextBox x:Name="DirectorTextBox" HorizontalAlignment="Center" Height="23" Margin="390,120,202,0" TextWrapping="Wrap"  VerticalAlignment="Top" TextAlignment="Center" Width="200"/>
+        <TextBox x:Name="DirectorTextBox" HorizontalAlignment="Center" Height="30" Margin="390,120,202,0" TextWrapping="Wrap"  VerticalAlignment="Top" TextAlignment="Center" Width="200"/>
         <TextBlock x:Name="Telephone" HorizontalAlignment="Center" Margin="280,164,402,0" TextWrapping="Wrap" Text="Telephone" VerticalAlignment="Top" Width="100" TextAlignment="Center" RenderTransformOrigin="0.864,0.313"/>
-        <TextBox x:Name="TelephoneTextBox" HorizontalAlignment="Center" Height="23" Margin="390,160,202,0" TextWrapping="Wrap"  VerticalAlignment="Top" TextAlignment="Center" Width="200"/>
+        <TextBox x:Name="TelephoneTextBox" HorizontalAlignment="Center" Height="30" Margin="390,160,202,0" TextWrapping="Wrap"  VerticalAlignment="Top" TextAlignment="Center" Width="200"/>
         <TextBlock HorizontalAlignment="Left" Margin="280,205,0,0" TextWrapping="Wrap" Text="Email" VerticalAlignment="Top" TextAlignment="Center" RenderTransformOrigin="0.195,0.627" Width="100"/>
-        <TextBox x:Name="EmailTextBox" HorizontalAlignment="Center" Height="23" Margin="390,200,202,0" TextWrapping="Wrap"  TextAlignment="Center" VerticalAlignment="Top" Width="200"/>
+        <TextBox x:Name="EmailTextBox" HorizontalAlignment="Center" Height="30" Margin="390,200,202,0" TextWrapping="Wrap"  TextAlignment="Center" VerticalAlignment="Top" Width="200"/>
         <TextBlock HorizontalAlignment="Left" Margin="280,245,0,0" TextWrapping="Wrap" Text="Review" VerticalAlignment="Top" TextAlignment="Center" Width="100"/>
-        <TextBox x:Name="ReviewTextBox" HorizontalAlignment="Center" Height="23" Margin="390, 240, 202, 0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="200"/>
+        <TextBox x:Name="ReviewTextBox" HorizontalAlignment="Center" Height="30" Margin="390, 240, 202, 0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="200"/>
         <TextBlock HorizontalAlignment="Left" Margin="280,290,0,0" TextWrapping="Wrap" Text="Address" VerticalAlignment="Top" TextAlignment="Center" Width="100"/>
-        <TextBox x:Name="AddressTextBox" HorizontalAlignment="Center" Height="23" Margin="390, 280, 202, 0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="200"/>
+        <TextBox x:Name="AddressTextBox" HorizontalAlignment="Center" Height="30" Margin="390, 280, 202, 0" TextWrapping="Wrap" VerticalAlignment="Top" TextAlignment="Center" Width="200"/>
 
-        <Button x:Name="addBtn" Content="Add" HorizontalAlignment="Center" Margin="435,320,257,0" VerticalAlignment="Top" Width="100" Click="AddBtn_Click"/>
+        <Button x:Name="addBtn" Content="Add" HorizontalAlignment="Center" Margin="435,320,257,0" VerticalAlignment="Top" Width="100" Click="AddBtn_Click" ToolTip="Add new producer"/>
     </Grid>
 </Window>

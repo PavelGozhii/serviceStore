@@ -32,6 +32,16 @@ namespace ServiceStore.EntityControl.IDetailModel
             this.connection = connection;
             detailModelDao = new DetailModelDao(connection);
             DataGrid();
+            if (DBConnection.id.Equals("Seller"))
+            {
+                updateBtn.Visibility = Visibility.Hidden;
+                deleteBtn.Visibility = Visibility.Hidden;
+                Add.Visibility = Visibility.Hidden;
+                DetailModel.Width = 220;
+                Price.Width = 80;
+                TelephoneModel.Width = 140;
+                Detail.Width = 130;
+            }
         }
 
         public void DataGrid()

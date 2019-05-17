@@ -5,6 +5,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ServiceStore.Dao
 {
@@ -46,7 +47,7 @@ namespace ServiceStore.Dao
                 }
             }catch(Exception e)
             {
-                Console.WriteLine(e);
+                MessageBox.Show(e.ToString());
             }
             finally
             {
@@ -78,7 +79,7 @@ namespace ServiceStore.Dao
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                MessageBox.Show(e.ToString());
             }
             finally
             {
@@ -104,7 +105,7 @@ namespace ServiceStore.Dao
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                MessageBox.Show(e.ToString());
                 return false;
             }
             finally
@@ -127,7 +128,7 @@ namespace ServiceStore.Dao
             }
             catch (Exception e)
             {
-                Console.WriteLine(e);
+                MessageBox.Show(e.ToString());
                 return false;
             }
             finally
@@ -153,7 +154,7 @@ namespace ServiceStore.Dao
                 return true;
             }catch(Exception e)
             {
-                Console.WriteLine(e);
+                MessageBox.Show(e.ToString());
                 return false;
             }
             finally

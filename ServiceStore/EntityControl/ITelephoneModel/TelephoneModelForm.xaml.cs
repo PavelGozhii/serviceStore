@@ -33,6 +33,7 @@ namespace ServiceStore.EntityControl.ITelephoneModel
             trademarkDao = new TrademarkDao(connection);
             InitializeComponent();
             ActionBtn.Content = "Create";
+            ActionBtn.ToolTip = "Create telephoneModel";
             List<Trademark> trademarks = trademarkDao.SelectAllTrademark();
             string[] trademarkNames = new string[trademarks.Count];
             for (int i = 0; i < trademarks.Count; i++) {
@@ -54,6 +55,7 @@ namespace ServiceStore.EntityControl.ITelephoneModel
             }
             TrademarkComboBox.ItemsSource = trademarkNames;
             ActionBtn.Content = "Update";
+            ActionBtn.ToolTip = "Update telephoneModel";
             TelephoneModelTextBox.Visibility = Visibility.Hidden;
             TelephoneModelTextBlock.Visibility = Visibility.Hidden;
             TelephoneModelTextBox.Text = telephoneModel.C_TelephoneModel;

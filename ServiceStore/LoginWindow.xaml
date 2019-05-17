@@ -6,19 +6,15 @@
         xmlns:local="clr-namespace:ServiceStore"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="LoginWindow" Height="450" Width="800">
+        Title="LoginWindow" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid Background="#FF1E64AA">
         <Grid Width="300" Height="400">
             <Border CornerRadius="3" HorizontalAlignment="Center" Width="290" Height="350" VerticalAlignment="Center" Background="White" Margin="0 35 0 0">
                 <StackPanel Margin="0 50 0 0">
                     <TextBlock Text="Sign in to your account" HorizontalAlignment="Center" Foreground="Gray" Margin="30" FontSize="21" FontFamily="Champagne &amp; Limousines" FontWeight="SemiBold"/>
-                    <TextBox Margin="20 10" materialDesign:HintAssist.Hint="E-Mail"/>
-                    <PasswordBox Margin="20 10" materialDesign:HintAssist.Hint="Password"/>
-                    <Grid Margin="20 0">
-                        <CheckBox Content="Remember Me" HorizontalAlignment="Left"/>
-                        <TextBlock Text="Forgot Password?" Foreground="#FF2259D1" HorizontalAlignment="Right" Cursor="Hand"/>
-                    </Grid>
-                    <Button Content="SIGN IN" Margin="20 30"/>
+                    <TextBox Text="Seller" x:Name="LoginTextBox" Margin="20 10" materialDesign:HintAssist.Hint="Login"/>
+                    <PasswordBox Password="Seller" x:Name="PasswordTextBox" Margin="20 10" materialDesign:HintAssist.Hint="Password"/>
+                    <Button x:Name="SignInButton" Content="SIGN IN" Margin="20 30" Click="SignInButton_Click"/>
                 </StackPanel>
             </Border>
             <Border Width="70" Height="70" HorizontalAlignment="Center" VerticalAlignment="Top" Background="White" CornerRadius="50">

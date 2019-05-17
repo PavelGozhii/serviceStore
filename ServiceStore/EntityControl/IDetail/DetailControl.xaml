@@ -31,22 +31,22 @@
                     </Grid.Effect>
                     <DataGrid HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" AlternatingRowBackground="#FFC4B0B0" Height="345" AutoGenerateColumns="False" Name="grdDetail" Margin="2,0,-410,-45" Grid.ColumnSpan="3" HorizontalAlignment="Center" Width="655" Grid.RowSpan="3" VerticalAlignment="Bottom">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Binding="{Binding C_Detail}" Width="200" Header="Detail"/>
-                            <DataGridTextColumn Binding="{Binding Type}" Width="200" Header="Type"/>
-                            <DataGridTemplateColumn>
+                            <DataGridTextColumn x:Name="Detail" Binding="{Binding C_Detail}" Width="200" Header="Detail"/>
+                            <DataGridTextColumn x:Name="Type" Binding="{Binding Type}" Width="200" Header="Type"/>
+                            <DataGridTemplateColumn x:Name="UpdateColumn">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal">
-                                            <Button x:Name="updateBtn" Content="Update" Click="UpdateBtn_Click"/>
+                                            <Button x:Name="updateBtn" Content="Update" Click="UpdateBtn_Click" ToolTip="Update detail"/>
                                         </StackPanel>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTemplateColumn>
+                            <DataGridTemplateColumn  x:Name="DeleteColumn">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal">
-                                            <Button x:Name="deleteBtn" Content="Delete" Click="DeleteBtn_Click"/>
+                                            <Button x:Name="deleteBtn" Content="Delete" Click="DeleteBtn_Click" ToolTip="Delete detail"/>
                                         </StackPanel>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
@@ -55,8 +55,8 @@
                     </DataGrid>
 
                 </Grid>
-                <Button x:Name="Add" Content="Add New" HorizontalAlignment="Left" Height="35" Margin="60,30,0,0" Width="100" Click="Add_Click" VerticalAlignment="Top"/>
-                <TextBox x:Name="searchTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="62,35,0,0" TextWrapping="Wrap" Text="Search"
+                <Button x:Name="Add" Content="Add New" HorizontalAlignment="Left" Height="35" Margin="60,30,0,0" Width="100" Click="Add_Click" VerticalAlignment="Top" ToolTip="Add new detail"/>
+                <TextBox x:Name="searchTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="62,35,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Search"
                          MouseDoubleClick="SearchTextBox_MouseDoubleClick" VerticalAlignment="Top" Width="100" TextChanged="SearchTextBox_TextChanged"/>
             </Grid>
         </materialDesign:TransitioningContent>

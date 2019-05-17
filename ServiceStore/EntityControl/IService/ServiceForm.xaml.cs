@@ -37,6 +37,7 @@ namespace ServiceStore.EntityControl.IService
             }
             DetailComboBox.ItemsSource = detailsName;
             updateBtn.Content = "Create";
+            updateBtn.ToolTip = "Create service";
         }
 
         public ServiceForm(Service service, SqlConnection connection)
@@ -59,6 +60,7 @@ namespace ServiceStore.EntityControl.IService
             }
             DetailComboBox.ItemsSource = detailsName;
             updateBtn.Content = "Update";
+            updateBtn.ToolTip = "Update service";
         }
 
         private void Btn_Click(object sender, RoutedEventArgs e)

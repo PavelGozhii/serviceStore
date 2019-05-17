@@ -22,7 +22,7 @@ namespace ServiceStore.EntityControl.ITelephone
     /// Логика взаимодействия для TelephoneControl.xaml
     /// </summary>
     public partial class TelephoneControl : UserControl
-    {
+    { 
         SqlConnection connection;
         TelephoneDao telephoneDao;
         public TelephoneControl(SqlConnection connection)
@@ -31,6 +31,12 @@ namespace ServiceStore.EntityControl.ITelephone
             telephoneDao = new TelephoneDao(connection);
             InitializeComponent();
             DataGrid();
+            if (DBConnection.id.Equals("Seller"))
+            {
+                DeleteBtn.Visibility = Visibility.Hidden;
+                IMEI.Width = 240;
+                Telephnemodel.Width = 240;
+            }
         }
 
         public void DataGrid()

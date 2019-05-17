@@ -10,7 +10,7 @@
         <TextBlock x:Name="DiscountTextBlock" HorizontalAlignment="Center" Margin="280,75,407,0" TextWrapping="Wrap" Text="C_Discount" VerticalAlignment="Top" Width="105" Height="25" TextAlignment="Center"/>
         <TextBox x:Name="DiscountTextBox" HorizontalAlignment="Center" Height="25" Margin="390,70,252,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextAlignment="Center"/>
         <TextBlock HorizontalAlignment="Center" Margin="285,185,402,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="105" Height="25" TextAlignment="Center"/>
-        <TextBox x:Name="SizeTextBox" HorizontalAlignment="Center" Height="25" Margin="390,125,252,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextAlignment="Center"/>
+        <TextBox x:Name="SizeTextBox" HorizontalAlignment="Center" Height="25" Margin="390,125,252,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextAlignment="Center" ToolTip="Only int value"/>
         <TextBlock HorizontalAlignment="Center" Margin="285,130,402,0" TextWrapping="Wrap" Text="Size" VerticalAlignment="Top" Width="105" Height="25" TextAlignment="Center"/>
         <TextBox x:Name="NameTextBox" HorizontalAlignment="Center" Height="25" Margin="390,180,252,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextAlignment="Center"/>
         <TextBlock HorizontalAlignment="Left" Height="20" Margin="300,235,0,0" TextWrapping="Wrap" Text="Day" VerticalAlignment="Top" Width="50" TextAlignment="Center" RenderTransformOrigin="0.3,0.6"/>

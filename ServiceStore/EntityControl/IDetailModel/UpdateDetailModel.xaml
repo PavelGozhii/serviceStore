@@ -11,11 +11,11 @@
         <TextBlock HorizontalAlignment="Center" Margin="285,60,402,0" TextWrapping="Wrap" Text="DetailModel" VerticalAlignment="Top" Width="105" Height="25" TextAlignment="Center"/>
         <TextBox x:Name="DetailModelTextBox" HorizontalAlignment="Center" Height="25" Margin="395,55,247,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextAlignment="Center"/>
         <TextBlock HorizontalAlignment="Center" Margin="285,110,402,0" TextWrapping="Wrap" Text="Price" VerticalAlignment="Top" Width="105" Height="25" TextAlignment="Center"/>
-        <TextBox x:Name="PriceTextBox" HorizontalAlignment="Center" Height="25" Margin="390,105,252,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextAlignment="Center"/>
+        <TextBox x:Name="PriceTextBox" HorizontalAlignment="Center" Height="25" Margin="390,105,252,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextAlignment="Center" ToolTip="Only float value"/>
         <TextBlock HorizontalAlignment="Center" Margin="285,160,402,0" TextWrapping="Wrap" Text="TelephoneModel" VerticalAlignment="Top" Width="105" Height="25" TextAlignment="Center"/>
         <ComboBox x:Name="TelephoneModelComboBox" HorizontalAlignment="Center" Height="25" Margin="390,155,252,0" VerticalAlignment="Top" Width="150" HorizontalContentAlignment="Center"/>
         <TextBlock HorizontalAlignment="Center" Margin="285,210,402,0" TextWrapping="Wrap" Text="Detail" VerticalAlignment="Top" Width="105" Height="25" TextAlignment="Center"/>
         <ComboBox x:Name="DetailComboBox" HorizontalAlignment="Center" Height="25" Margin="390,205,252,0" VerticalAlignment="Top" Width="150" HorizontalContentAlignment="Center"/>
-        <Button x:Name="UpdateBtn" Content="Update" HorizontalAlignment="Center" Margin="380,250,312,0" VerticalAlignment="Top" Width="100" Click="UpdateBtn_Click"/>
+        <Button x:Name="UpdateBtn" Content="Update" HorizontalAlignment="Center" Margin="380,250,312,0" VerticalAlignment="Top" Width="100" Click="UpdateBtn_Click" ToolTip="Update detail"/>
     </Grid>
 </Window>

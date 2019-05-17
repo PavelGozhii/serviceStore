@@ -4,6 +4,7 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ServiceStore.Dao
 {
@@ -23,9 +24,7 @@ namespace ServiceStore.Dao
 
         public static SqlConnection Connect()
         {
-            string connectionString = @"Data Source=DESKTOP-C4CO08G; Initial Catalog = servicestore;User id=Admin;Password=Admin;";
-            //     "Data Source=DESKTOP-C4CO08G;Initial Catalog=servicestore;User Id=Admin;Password=Admin;";
-
+            string connectionString = string.Format(@"Data Source=DESKTOP-C4CO08G; Initial Catalog = servicestore;User id={0};Password={1};",id, password);
             SqlConnection cnn = new SqlConnection(connectionString);
             try {                                                
             cnn.Open();          
@@ -35,8 +34,24 @@ namespace ServiceStore.Dao
             {
                 Console.WriteLine(e);
             }
-
             return cnn;
+        }
+
+        public static SqlConnection Connect(string id, string password)
+        {
+            string connectionString = string.Format(@"Data Source=DESKTOP-C4CO08G; Initial Catalog = servicestore;User id={0};Password={1};", id, password);
+            SqlConnection connection = new SqlConnection(connectionString);
+            try
+            {
+                connection.Open();
+                Console.WriteLine("ConnectionOpen!");
+                connection.Close();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+            }
+            return connection;
         }
 
         public static bool Disconnect()
@@ -47,11 +62,9 @@ namespace ServiceStore.Dao
                 return true;
             }catch(Exception e)
             {
-                Console.WriteLine(e);
                 return false;
             }
         }
-
 
     }
 }

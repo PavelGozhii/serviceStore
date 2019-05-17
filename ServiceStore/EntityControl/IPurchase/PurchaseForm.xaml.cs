@@ -42,7 +42,7 @@ namespace ServiceStore.EntityControl.IPurchase
             string[] telephoneIMEIs = new string[telephones.Count];
             for(int i = 0; i < customers.Count; i++)
             {
-                nameCustomers[i] = customers[i].FullName;
+                nameCustomers[i] = customers[i].C_Customer;
             }
             for(int i = 0; i < telephones.Count; i++)
             {
@@ -57,22 +57,13 @@ namespace ServiceStore.EntityControl.IPurchase
         {
             string C_Purchase = TextBoxPurchase.Text;
             string Customer = ComboBoxCustomer.Text;
-            List<Customer> customers = customerDao.SelectAllCustomers();
-            string C_Customer = null;
-            for(int i = 0; i < customers.Count; i++)
-            {
-                if (Customer.Equals(customers[i].FullName)){
-                    C_Customer = customers[i].C_Customer;
-                    break;
-                }
-            }
             string IMEI = ComboBoxIMEI.Text;
             string Status = "In proccess";
             string Year = DateTime.Today.Year.ToString();
             string Month = DateTime.Today.Month.ToString();
             string Day = DateTime.Today.Day.ToString();
             string FullDate = Year + "-" + Month + "-" + Day;
-            Purchase purchase = new Purchase(C_Purchase, Status, FullDate, C_Customer, IMEI);
+            Purchase purchase = new Purchase(C_Purchase, Status, FullDate, Customer, IMEI);
             purchaseDao.InsertPurchase(purchase);
             Close();
         }

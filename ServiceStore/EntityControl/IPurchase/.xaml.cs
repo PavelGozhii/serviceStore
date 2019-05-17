@@ -21,6 +21,14 @@ namespace ServiceStore
             purchaseDao = new PurchaseDao(connection);
             InitializeComponent();
             GridData();
+            if (DBConnection.id.Equals("Seller"))
+            {
+                DeleteBtn.Visibility = System.Windows.Visibility.Hidden;
+                Status.Width = 120;
+                Date.Width = 120;
+                Customer.Width = 150;
+                IMEI.Width = 150;
+            }
         }
 
         public void GridData()

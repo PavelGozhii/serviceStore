@@ -30,6 +30,14 @@ namespace ServiceStore.EntityControl.ICustomer
             InitializeComponent();
             this.connection = connection;
             customerDao = new CustomerDao(connection);
+            if (DBConnection.id.Equals("Seller"))
+            {
+                DeleteBtn.Visibility = Visibility.Hidden;
+                Customer.Width = 130;
+                FullName.Width = 130;
+                Date.Width = 130;
+                Address.Width = 130;
+            }
             DataGrid();
         }
 

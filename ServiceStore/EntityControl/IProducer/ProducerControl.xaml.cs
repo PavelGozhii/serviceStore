@@ -31,6 +31,18 @@ namespace ServiceStore.EntityControl.IProducer
             InitializeComponent();
             producerDao = new ProducerDao(connection);
             DataGrid();
+            if (DBConnection.id.Equals("Seller"))
+            {
+                UpdateBtn.Visibility = Visibility.Hidden;
+                DeleteBtn.Visibility = Visibility.Hidden;
+                Add.Visibility = Visibility.Hidden;
+                Producer.Width = 130;
+                Director.Width = 110;
+                Telephone.Width = 130;
+                Email.Width = 140;
+                Review.Width = 80;
+                PhisicalAddress.Width = 150;
+            }
         }
 
         public void DataGrid()

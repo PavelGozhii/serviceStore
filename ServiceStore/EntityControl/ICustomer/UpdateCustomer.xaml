@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ServiceStore.EntityControl.ICustomer"
         mc:Ignorable="d"
-        Title="UpdateCustomer" Height="450" Width="800">
+        Title="UpdateCustomer" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid Background="#FFEEEEEE">
         <TextBox x:Name="LastName" HorizontalAlignment="Center" Height="25" Margin="390, 75, 282, 0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextAlignment="Center" Visibility="Hidden"/>
         <TextBlock Text="Login" Margin="280,80,405,0" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center" Height="25" Width="105"/>
@@ -21,6 +21,6 @@
         <ComboBox x:Name="ComboBoxMonth" HorizontalAlignment="Left" Height="25" Margin="435,175,0,0" VerticalAlignment="Top" Width="30" ScrollViewer.VerticalScrollBarVisibility="Disabled"  HorizontalContentAlignment="Center"/>
         <TextBlock HorizontalAlignment="Left" Height="25" Margin="470,180,0,0" TextWrapping="Wrap" Text="Year" VerticalAlignment="Top" Width="50" TextAlignment="Center" RenderTransformOrigin="0.4,0.6"/>
         <ComboBox x:Name="ComboBoxYear" HorizontalAlignment="Left" Height="25" Margin="520,175,0,0" VerticalAlignment="Top" Width="45" RenderTransformOrigin="0.3,0.4" HorizontalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" />
-        <Button x:Name="UpdateBtn" Content="Update" HorizontalAlignment="Center" Margin="360,298,332,0" VerticalAlignment="Top" Width="100" Click="UpdateBtn_Click"/>
+        <Button x:Name="UpdateBtn" Content="Update" HorizontalAlignment="Center" Margin="360,298,332,0" VerticalAlignment="Top" Width="100" Click="UpdateBtn_Click" ToolTip="Update customer"/>
     </Grid>
 </Window>

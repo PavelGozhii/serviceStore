@@ -7,6 +7,14 @@
         mc:Ignorable="d"
         Title="UpdatePurchase" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid Background="#FFEEEEEE">
-        
+        <TextBlock Visibility="Hidden" x:Name="C_Purchase" HorizontalAlignment="Center" Margin="230,100,462,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="1.541,0.376" TextAlignment="Center" Width="100"><Run Text="C_Purchase"/></TextBlock>
+        <TextBox Visibility="Hidden" x:Name="TextBoxPurchase" TextAlignment="Center" HorizontalAlignment="Center" Height="23" Margin="320,97,272,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="200"/>
+        <Button x:Name="ActionButton" Content="Create" HorizontalAlignment="Center" Margin="350,288,312,0" VerticalAlignment="Top" Width="130" Click="ActionButton_Click" Height="27"/>
+        <ComboBox x:Name="ComboBoxCustomer" HorizontalAlignment="Left" Margin="320,130,0,0" VerticalAlignment="Top" Width="200" Height="30" HorizontalContentAlignment="Center"/>
+        <TextBlock x:Name="Customer" HorizontalAlignment="Center" Margin="235,139,457,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="1.541,0.376" TextAlignment="Center" Width="100"><Run Text="Customer"/></TextBlock>
+        <TextBlock x:Name="IMEI" HorizontalAlignment="Center" Margin="235,174,457,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="1.541,0.376" TextAlignment="Center" Width="100"><Run Text="IMEI"/></TextBlock>
+        <ComboBox x:Name="ComboBoxIMEI" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Height="30" Margin="320,170,272,0" VerticalAlignment="Top" Width="200"/>
+        <Button x:Name="CreateCustomer"  Content="Create New" HorizontalAlignment="Left" Margin="540,130,0,0" VerticalAlignment="Top" Width="85" Height="25" FontSize="10" Click="CreateCustomer_Click" ToolTip="Create new customer"/>
+        <Button x:Name="CreateIMEI"  Content="CreateNew" HorizontalAlignment="Left" Margin="540,170,0,0" VerticalAlignment="Top" Width="85" Height="25" FontSize="10" Click="CreateIMEI_Click" ToolTip="Create new telephone"/>
     </Grid>
 </Window>

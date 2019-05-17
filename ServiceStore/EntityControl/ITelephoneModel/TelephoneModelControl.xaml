@@ -31,26 +31,26 @@
                     </Grid.Effect>
                     <DataGrid HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" AlternatingRowBackground="#FFC4B0B0" Height="345" AutoGenerateColumns="False" Name="grdTelephoneModel" Margin="-33,0,-400,-45" Grid.ColumnSpan="3" HorizontalAlignment="Center" Width="680" Grid.RowSpan="3" VerticalAlignment="Bottom">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Binding="{Binding Name}" Width="70" Header="Name"/>
-                            <DataGridTextColumn Binding="{Binding Category}" Width="90" Header="Category"/>
-                            <DataGridTextColumn Binding="{Binding OperatingSystem}" Width="60" Header="OS"/>
-                            <DataGridTextColumn Binding="{Binding MemorySize}" Width="80" Header="Memory"/>
-                            <DataGridTextColumn Binding="{Binding Processor}" Width="90" Header="Processor"/>
-                            <DataGridTextColumn Binding="{Binding C_Trademark}" Width="90" Header="Trademark"/>
-                            <DataGridTemplateColumn>
+                            <DataGridTextColumn x:Name="Name" Binding="{Binding Name}" Width="70" Header="Name"/>
+                            <DataGridTextColumn x:Name="Category" Binding="{Binding Category}" Width="90" Header="Category"/>
+                            <DataGridTextColumn x:Name="OS" Binding="{Binding OperatingSystem}" Width="60" Header="OS"/>
+                            <DataGridTextColumn x:Name="Memory" Binding="{Binding MemorySize}" Width="80" Header="Memory"/>
+                            <DataGridTextColumn x:Name="Processor" Binding="{Binding Processor}" Width="90" Header="Processor"/>
+                            <DataGridTextColumn x:Name="Trademark" Binding="{Binding C_Trademark}" Width="90" Header="Trademark"/>
+                            <DataGridTemplateColumn x:Name="UpdateBtn">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal">
-                                            <Button x:Name="updateBtn" Content="Update" Click="UpdateBtn_Click"/>
+                                            <Button x:Name="updateBtn" Content="Update" Click="UpdateBtn_Click" ToolTip="Update telephoneModel"/>
                                         </StackPanel>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTemplateColumn>
+                            <DataGridTemplateColumn x:Name="DeleteBtn">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal">
-                                            <Button x:Name="deleteBtn" Content="Delete" Click="DeleteBtn_Click"/>
+                                            <Button x:Name="deleteBtn" Content="Delete" Click="DeleteBtn_Click" ToolTip="Delete telephoneModel"/>
                                         </StackPanel>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
@@ -59,8 +59,8 @@
                     </DataGrid>
 
                 </Grid>
-                <Button x:Name="Add" Content="Add New" HorizontalAlignment="Left" Height="30" Margin="30,25,0,0" Width="100" Click="Add_Click" VerticalAlignment="Top"/>
-                <TextBox x:Name="searchTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="57,35,0,0" TextWrapping="Wrap" Text="Search"
+                <Button x:Name="Add" Content="Add New" HorizontalAlignment="Left" Height="30" Margin="30,25,0,0" Width="100" Click="Add_Click" VerticalAlignment="Top" ToolTip="Add new telephonemodel"/>
+                <TextBox x:Name="searchTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="57,35,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Search"
                          MouseDoubleClick="SearchTextBox_MouseDoubleClick" VerticalAlignment="Top" Width="100" TextChanged="SearchTextBox_TextChanged"/>
             </Grid>
         </materialDesign:TransitioningContent>

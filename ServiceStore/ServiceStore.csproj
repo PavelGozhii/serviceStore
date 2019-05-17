@@ -153,6 +153,9 @@
     <Compile Include="EntityControl\IPurchase\.xaml.cs">
       <DependentUpon>PurchaseControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SellerWindow.xaml.cs">
+      <DependentUpon>SellerWindow.xaml</DependentUpon>
+    </Compile>
     <Page Include="EntityControl\ICustomer\CustomerControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -271,6 +274,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="EntityControl\IPurchase\PurchaseControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SellerWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

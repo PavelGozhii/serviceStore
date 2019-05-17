@@ -8,21 +8,32 @@ using ServiceStore.EntityControl.IService;
 using ServiceStore.EntityControl.ITelephone;
 using ServiceStore.EntityControl.ITelephoneModel;
 using ServiceStore.EntityControl.ITrademark;
+using System;
+using System.Collections.Generic;
 using System.Data.SqlClient;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Data;
+using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Media;
+using System.Windows.Media.Imaging;
+using System.Windows.Shapes;
 
 namespace ServiceStore
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для SellerWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SellerWindow : Window
     {
         SqlConnection connection = DBConnection.Connect();
-        public MainWindow(SqlConnection connection)
+        public SellerWindow(SqlConnection connection)
         {
+            
             this.connection = connection;
             InitializeComponent();
         }
@@ -41,7 +52,8 @@ namespace ServiceStore
         {
             int index = ListViewMenu.SelectedIndex;
             MoveCursorMenu(index);
-
+            DBConnection.id = "Seller";
+            DBConnection.password = "Seller";
             switch (index)
             {
                 case 0:
@@ -111,3 +123,4 @@ namespace ServiceStore
         }
     }
 }
+

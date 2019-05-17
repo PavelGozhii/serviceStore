@@ -38,6 +38,7 @@ namespace ServiceStore.EntityControl.ITelephone
                 telephoneModelNames[i] = telephoneModels[i].C_TelephoneModel;
             }
             TelephoneModelComboBox.ItemsSource = telephoneModelNames;
+            ActionBtn.ToolTip = "Create telephone";
         }
 
         public TelephoneForm(SqlConnection connection, Telephone telephone)
@@ -57,6 +58,7 @@ namespace ServiceStore.EntityControl.ITelephone
             LastIdTextBox.Text = telephone.IMEI;
             TelephoneModelComboBox.Text = telephone.C_TelephoneModel;
             ActionBtn.Content = "Update";
+            ActionBtn.ToolTip = "Update telephone";
             
         }
 

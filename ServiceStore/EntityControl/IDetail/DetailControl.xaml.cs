@@ -21,15 +21,24 @@ namespace ServiceStore.EntityControl.IDetail
             detailDao = new DetailDao(connection);
             InitializeComponent();
             DataGrid();
+            if (DBConnection.id.Equals("Seller"))
+            {
+                UpdateColumn.Visibility = Visibility.Hidden;
+                DeleteColumn.Visibility = Visibility.Hidden;
+                Add.Visibility = Visibility.Hidden;
+                Detail.Width = 350;
+                Type.Width = 350;
+            }
         }
 
         public void DataGrid()
         {
-            grdDetail.ItemsSource = detailDao.SelectAllDetails();
+            grdDetail.ItemsSource = detailDao.SelectAllDetails(); 
         }
 
         public void DataGrid(List<Detail> details)
         {
+            
             grdDetail.ItemsSource = details;
         }
 

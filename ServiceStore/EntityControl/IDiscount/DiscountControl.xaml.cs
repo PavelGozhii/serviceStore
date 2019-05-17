@@ -32,6 +32,15 @@ namespace ServiceStore.EntityControl.IDiscount
             discountDao = new DiscountDao(connection);
             this.connection = connection;
             GridData();
+            if (DBConnection.id.Equals("Seller"))
+            {
+                deleteBtn.Visibility = Visibility.Hidden;
+                Name.Width = 220;
+                Size.Width = 90;
+                Starting.Width = 100;
+                Ending.Width = 100;
+               
+            }
         }
 
         public void GridData()

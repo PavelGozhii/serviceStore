@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ServiceStore.EntityControl.ITrademark"
         mc:Ignorable="d"
-        Title="NewTrademarkForm" Height="450" Width="800">
+        Title="NewTrademarkForm" Height="450" Width="800" WindowStartupLocation="CenterScreen">
     <Grid Background="#FFEEEEEE">
         <TextBlock Text="C_Trademark" Margin="280,80,405,0" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center" Height="25" Width="105"/>
         <TextBox x:Name="TradeMarkTextBox" HorizontalAlignment="Center" Height="25" Margin="395,75,247,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextAlignment="Center"/>
@@ -15,7 +15,7 @@
         <TextBox x:Name="ReviewTextBox" HorizontalAlignment="Center" Height="25" Margin="395,175,247,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="150" TextAlignment="Center"/>
         <TextBlock HorizontalAlignment="Center" Margin="281,230,412,0" TextWrapping="Wrap" Text="Producer" VerticalAlignment="Top" Width="99" Height="25" TextAlignment="Center"/>
         <ComboBox x:Name="ProducerComboBox" HorizontalAlignment="Center" Height="30" Margin="395,225,252,0" VerticalAlignment="Top" Width="145" HorizontalContentAlignment="Center"/>
-        <Button x:Name="CreateBtn" Content="Create" HorizontalAlignment="Center" Margin="360,298,332,0" VerticalAlignment="Top" Width="100" Click="CreateBtn_Click"/>
+        <Button x:Name="CreateBtn" Content="Create" HorizontalAlignment="Center" Margin="360,298,332,0" VerticalAlignment="Top" Width="100" Click="CreateBtn_Click" HorizontalContentAlignment="Center" ToolTip="Create new trademark" />
 
     </Grid>
 </Window>

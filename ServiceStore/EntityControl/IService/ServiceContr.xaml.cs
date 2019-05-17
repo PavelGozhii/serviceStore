@@ -23,7 +23,6 @@ namespace ServiceStore.EntityControl.IService
     /// </summary>
     public partial class ServiceContr : UserControl
     {
-        DBConnection dBConnection = new DBConnection("Admin", "Admin");
         SqlConnection connection;
         ServiceDao serviceDao;
         public ServiceContr(SqlConnection connection)
@@ -32,6 +31,16 @@ namespace ServiceStore.EntityControl.IService
             serviceDao = new ServiceDao(connection);
             InitializeComponent();
             GridData();
+            if (DBConnection.id.Equals("Seller"))
+            {
+                UpdateBtn.Visibility = Visibility.Hidden;
+                DeleteBtn.Visibility = Visibility.Hidden;
+                Add.Visibility = Visibility.Hidden;
+                Name.Width= 180;
+                Category.Width = 120;
+                Price.Width = 120;
+                Detail.Width = 150;
+            }
         }
 
         public void GridData()

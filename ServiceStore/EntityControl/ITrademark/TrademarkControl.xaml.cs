@@ -31,6 +31,15 @@ namespace ServiceStore.EntityControl.ITrademark
             this.connection = connection;
             trademarkkDao = new TrademarkDao(connection);
             DataGrid();
+            if (DBConnection.id.Equals("Seller"))
+            {
+                UpdateBtn.Visibility = Visibility.Hidden;
+                DeleteBtn.Visibility = Visibility.Hidden;
+                Add.Visibility = Visibility.Hidden;
+                Name.Width = 130;
+                Review.Width = 280;
+                Producer.Width = 230;
+            }
         }
 
         public void DataGrid()

@@ -52,6 +52,7 @@ namespace ServiceStore.EntityControl.IDiscount
             ComboBoxMonthEnding.ItemsSource = months;
             ComboBoxYearEnding.ItemsSource = years;
             CreateBtn.Content = "Create";
+            CreateBtn.ToolTip = "Create discount";
         }
 
         public NewDiscountForm(SqlConnection connection, Discount discount)
@@ -81,6 +82,7 @@ namespace ServiceStore.EntityControl.IDiscount
             ComboBoxMonthEnding.ItemsSource = months;
             ComboBoxYearEnding.ItemsSource = years;
             CreateBtn.Content = "Update";
+            CreateBtn.ToolTip = "Update discount";
             NameTextBox.Text = discount.Name;
             DiscountTextBox.Text = discount.C_Discount;
             DiscountTextBox.Visibility = Visibility.Hidden;

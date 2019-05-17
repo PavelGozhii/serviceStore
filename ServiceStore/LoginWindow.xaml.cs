@@ -1,5 +1,7 @@
-﻿using System;
+﻿using ServiceStore.Dao;
+using System;
 using System.Collections.Generic;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +24,41 @@ namespace ServiceStore
         public LoginWindow()
         {
             InitializeComponent();
+        }
+
+        private void SignInButton_Click(object sender, RoutedEventArgs e)
+        {
+            string id = LoginTextBox.Text;
+            string Password = PasswordTextBox.Password;
+            DBConnection dbconnection = new DBConnection(id, Password);
+            SqlConnection connection = DBConnection.Connect(id, Password);
+            DBConnection.id = id;
+            DBConnection.password = Password;
+            if (DBConnection.id.Equals("Admin") && DBConnection.password.Equals("Admin"))
+            {
+                Hide();
+                MainWindow mainWindow = new MainWindow(connection);
+                mainWindow.ShowDialog();
+                PasswordTextBox.Clear();
+                Show();
+            }
+            else if(DBConnection.id.Equals("Seller") && DBConnection.password.Equals("Seller"))
+            {
+                Hide();
+                SellerWindow sellerWindow= new SellerWindow(connection);
+                sellerWindow.ShowDialog();
+                PasswordTextBox.Clear();
+                Show();
+            }
+            else if (DBConnection.id.Equals("User") && DBConnection.password.Equals("User"))
+            {
+                Hide();
+                Show();
+            }
+            else
+            {
+                MessageBox.Show("Incorrect login or password");
+            }
         }
     }
 }

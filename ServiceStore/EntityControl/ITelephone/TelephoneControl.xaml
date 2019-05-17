@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:ServiceStore.EntityControl.ITelephone"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="800">
+             d:DesignHeight="450" d:DesignWidth="800" >
     <Grid Background="#FFEEEEEE">
         <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.8}">
             <Grid HorizontalAlignment="Left" Width="800">
@@ -31,22 +31,22 @@
                     </Grid.Effect>
                     <DataGrid HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" AlternatingRowBackground="#FFC4B0B0" Height="345" AutoGenerateColumns="False" Name="grdTelephone" Margin="-33,0,-400,-45" Grid.ColumnSpan="3" HorizontalAlignment="Center" Width="680" Grid.RowSpan="3" VerticalAlignment="Bottom">
                         <DataGrid.Columns>
-                            <DataGridTextColumn Binding="{Binding IMEI}" Width="200" Header="IMEI"/>
-                            <DataGridTextColumn Binding="{Binding C_TelephoneModel}" Width="200" Header="TelephoneModel"/>
+                            <DataGridTextColumn x:Name="IMEI" Binding="{Binding IMEI}" Width="200" Header="IMEI"/>
+                            <DataGridTextColumn x:Name="Telephnemodel" Binding="{Binding C_TelephoneModel}" Width="200" Header="TelephoneModel"/>
                             <DataGridTemplateColumn>
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal">
-                                            <Button x:Name="updateBtn" Content="Update" Click="UpdateBtn_Click"/>
+                                            <Button x:Name="updateBtn" Content="Update" Click="UpdateBtn_Click" ToolTip="Update telephone"/>
                                         </StackPanel>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
                             </DataGridTemplateColumn>
-                            <DataGridTemplateColumn>
+                            <DataGridTemplateColumn x:Name="DeleteBtn">
                                 <DataGridTemplateColumn.CellTemplate>
                                     <DataTemplate>
                                         <StackPanel Orientation="Horizontal">
-                                            <Button x:Name="deleteBtn" Content="Delete" Click="DeleteBtn_Click"/>
+                                            <Button x:Name="deleteBtn" Content="Delete" Click="DeleteBtn_Click" ToolTip="Delete telephone"/>
                                         </StackPanel>
                                     </DataTemplate>
                                 </DataGridTemplateColumn.CellTemplate>
@@ -54,7 +54,7 @@
                         </DataGrid.Columns>
                     </DataGrid>
                 </Grid>
-                <Button x:Name="Add" Content="Add New" HorizontalAlignment="Left" Height="30" Margin="30,25,0,0" Width="95" Click="Add_Click" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5">
+                <Button x:Name="Add" Content="Add New" HorizontalAlignment="Left" Height="30" Margin="30,25,0,0" Width="95" Click="Add_Click" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" ToolTip="Add new telephone">
                     <Button.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform/>
@@ -64,7 +64,7 @@
                         </TransformGroup>
                     </Button.RenderTransform>
                 </Button>
-                <TextBox x:Name="searchTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="57,35,0,0" TextWrapping="Wrap" Text="Search"
+                <TextBox x:Name="searchTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="57,35,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Search"
                          MouseDoubleClick="SearchTextBox_MouseDoubleClick" VerticalAlignment="Top" Width="100" TextChanged="SearchTextBox_TextChanged"/>
             </Grid>
         </materialDesign:TransitioningContent>
