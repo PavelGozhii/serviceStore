@@ -34,30 +34,35 @@ namespace ServiceStore
             SqlConnection connection = DBConnection.Connect(id, Password);
             DBConnection.id = id;
             DBConnection.password = Password;
-            if (DBConnection.id.Equals("Admin") && DBConnection.password.Equals("Admin"))
             {
-                Hide();
-                MainWindow mainWindow = new MainWindow(connection);
-                mainWindow.ShowDialog();
-                PasswordTextBox.Clear();
-                Show();
-            }
-            else if(DBConnection.id.Equals("Seller") && DBConnection.password.Equals("Seller"))
-            {
-                Hide();
-                SellerWindow sellerWindow= new SellerWindow(connection);
-                sellerWindow.ShowDialog();
-                PasswordTextBox.Clear();
-                Show();
-            }
-            else if (DBConnection.id.Equals("User") && DBConnection.password.Equals("User"))
-            {
-                Hide();
-                Show();
-            }
-            else
-            {
-                MessageBox.Show("Incorrect login or password");
+                if (DBConnection.id.Equals("Admin") && DBConnection.password.Equals("Admin"))
+                {
+                    Hide();
+                    MainWindow mainWindow = new MainWindow(connection);
+                    mainWindow.ShowDialog();
+                    PasswordTextBox.Clear();
+                    Show();
+                }
+                else if (DBConnection.id.Equals("Seller") && DBConnection.password.Equals("Seller"))
+                {
+                    Hide();
+                    SellerWindow sellerWindow = new SellerWindow(connection);
+                    sellerWindow.ShowDialog();
+                    PasswordTextBox.Clear();
+                    Show();
+                }
+                else if (DBConnection.id.Equals("Customer") && DBConnection.password.Equals("Customer"))
+                {
+                    Hide();
+                    CustomerWindow customerWindow = new CustomerWindow(connection);
+                    customerWindow.ShowDialog();
+                    PasswordTextBox.Clear();
+                    Show();
+                }
+                else
+                {
+                    MessageBox.Show("Incorrect login or password");
+                }
             }
         }
     }

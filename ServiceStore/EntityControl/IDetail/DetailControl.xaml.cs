@@ -60,6 +60,16 @@ namespace ServiceStore.EntityControl.IDetail
 
         private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
+            List<Detail> details = detailDao.SelectAllDetails();
+            List<Detail> input = new List<Detail>();
+            for (int i = 0; i < details.Count; i++)
+            {
+                if (details[i].Type.Contains(searchTextBox.Text))
+                {
+                    input.Add(details[i]);
+                }
+            }
+            DataGrid(input);
         }
 
         private void SearchTextBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)

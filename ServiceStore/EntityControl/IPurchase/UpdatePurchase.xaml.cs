@@ -56,6 +56,7 @@ namespace ServiceStore.EntityControl.IPurchase
             TextBoxPurchase.Text = purchase.C_Purchase;
             ComboBoxCustomer.Text = purchase.C_Customer;    
             ComboBoxIMEI.Text = purchase.IMEI;
+            StatusTextBox.Text = purchase.Status;
         }
 
         private void CreateIMEI_Click(object sender, RoutedEventArgs e)
@@ -90,7 +91,7 @@ namespace ServiceStore.EntityControl.IPurchase
             string Customer = ComboBoxCustomer.Text;
             List<Customer> customers = customerDao.SelectAllCustomers();
             string IMEI = ComboBoxIMEI.Text;
-            string Status = "In proccess";
+            string Status = StatusTextBox.Text;
             string Year = DateTime.Today.Year.ToString();
             string Month = DateTime.Today.Month.ToString();
             string Day = DateTime.Today.Day.ToString();

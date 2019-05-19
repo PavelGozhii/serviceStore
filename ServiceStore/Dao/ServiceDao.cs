@@ -15,8 +15,8 @@ namespace ServiceStore.Dao
         private static readonly string SELECT_ALL_Services = "SELECT * FROM service";
         private static readonly string SELECT_SERVICE_BY_ID =
             "SELECT * FROM service WHERE C_Service = @ID;";
-        private static readonly string SELECT_SERVICE_BY_NAME =
-            "SELECT * FROM service WHERE Name LIKE @Name%";
+        private static readonly string SELECT_ID_BY_NAME =
+            "SELECT C_Service FROM service WHERE Name = @Name;";
         private static readonly string INSERT_SERVICE =
             "INSERT INTO service(C_Service, Name, Category, Price, Detail) " +
             "VALUES (@ID, @Name, @Category, @Price, @Detail);";
@@ -56,13 +56,36 @@ namespace ServiceStore.Dao
             }
             catch (Exception e)
             {
-                MessageBox.Show(e.ToString());
+                MessageBox.Show(e.Message);
             }
             finally
             {
                 DBConnection.Disconnect();
             }
             return services;
+        }
+
+        public String SelectIdByName(string Name)
+        {
+            connection = DBConnection.Connect();
+            SqlCommand command;
+            SqlDataReader dataReader;
+            string id = null;
+            try
+            {
+                connection.Open();
+                command = new SqlCommand(SELECT_ID_BY_NAME, connection);
+                command.Parameters.AddWithValue("@Name", Name);
+                dataReader = command.ExecuteReader();
+                if (dataReader.Read())
+                {
+                    string Id = dataReader.GetValue(0).ToString();
+                }
+            }catch(Exception e)
+            {
+                MessageBox.Show(e.ToString());
+            }
+            return id;
         }
 
         public Service SelectServiceById(string C_Service)

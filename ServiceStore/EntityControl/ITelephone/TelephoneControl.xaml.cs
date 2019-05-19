@@ -66,7 +66,16 @@ namespace ServiceStore.EntityControl.ITelephone
 
         private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            List<Telephone> telephones = telephoneDao.SelectAllTelephone();
+            List<Telephone> input = new List<Telephone>();
+            for (int i = 0; i < telephones.Count; i++)
+            {
+                if (telephones[i].C_TelephoneModel.Contains(searchTextBox.Text))
+                {
+                    input.Add(telephones[i]);
+                }
+            }
+            DataGrid(input);
         }
 
         private void SearchTextBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)

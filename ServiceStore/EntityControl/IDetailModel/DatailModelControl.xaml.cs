@@ -77,7 +77,16 @@ namespace ServiceStore.EntityControl.IDetailModel
 
         private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            List<DetailModel> detailModels = detailModelDao.SelectAllDetailModel();
+            List<DetailModel> input = new List<DetailModel>();
+            for (int i = 0; i < detailModels.Count; i++)
+            {
+                if (detailModels[i].C_TelephoneModel.Contains(searchTextBox.Text))
+                {
+                    input.Add(detailModels[i]);
+                }
+            }
+            DataGrid(input);
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)

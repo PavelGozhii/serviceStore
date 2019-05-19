@@ -73,7 +73,16 @@ namespace ServiceStore.EntityControl.ITelephoneModel
 
         private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            List<TelephoneModel> telephoneModels = telephoneModelDao.selectAllTelephomeModel();
+            List<TelephoneModel> input = new List<TelephoneModel>();
+            for (int i = 0; i < telephoneModels.Count; i++)
+            {
+                if (telephoneModels[i].Name.Contains(searchTextBox.Text))
+                {
+                    input.Add(telephoneModels[i]);
+                }
+            }
+            DataGrid(input);
         }
 
         private void UpdateBtn_Click(object sender, RoutedEventArgs e)

@@ -12,8 +12,8 @@
             <Border CornerRadius="3" HorizontalAlignment="Center" Width="290" Height="350" VerticalAlignment="Center" Background="White" Margin="0 35 0 0">
                 <StackPanel Margin="0 50 0 0">
                     <TextBlock Text="Sign in to your account" HorizontalAlignment="Center" Foreground="Gray" Margin="30" FontSize="21" FontFamily="Champagne &amp; Limousines" FontWeight="SemiBold"/>
-                    <TextBox Text="Seller" x:Name="LoginTextBox" Margin="20 10" materialDesign:HintAssist.Hint="Login"/>
-                    <PasswordBox Password="Seller" x:Name="PasswordTextBox" Margin="20 10" materialDesign:HintAssist.Hint="Password"/>
+                    <TextBox Text="Customer" x:Name="LoginTextBox" Margin="20 10" materialDesign:HintAssist.Hint="Login"/>
+                    <PasswordBox Password="Customer" x:Name="PasswordTextBox" Margin="20 10" materialDesign:HintAssist.Hint="Password"/>
                     <Button x:Name="SignInButton" Content="SIGN IN" Margin="20 30" Click="SignInButton_Click"/>
                 </StackPanel>
             </Border>

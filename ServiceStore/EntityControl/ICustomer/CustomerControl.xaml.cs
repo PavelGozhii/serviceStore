@@ -25,11 +25,15 @@ namespace ServiceStore.EntityControl.ICustomer
     {
         SqlConnection connection;
         CustomerDao customerDao;
+        List<Customer> customers;
+
         public CustomerControl(SqlConnection connection)
         {
             InitializeComponent();
             this.connection = connection;
             customerDao = new CustomerDao(connection);
+            customers = customerDao.SelectAllCustomers();
+
             if (DBConnection.id.Equals("Seller"))
             {
                 DeleteBtn.Visibility = Visibility.Hidden;
@@ -43,7 +47,7 @@ namespace ServiceStore.EntityControl.ICustomer
 
         public void DataGrid()
         {
-            grdCustomer.ItemsSource = customerDao.SelectAllCustomers();
+            grdCustomer.ItemsSource = customers;
         }
 
         public void DataGrid(List<Customer> customers)
@@ -56,12 +60,21 @@ namespace ServiceStore.EntityControl.ICustomer
             string Id = (grdCustomer.SelectedItem as Customer).C_Customer;
             UpdateCustomer updateCustomer = new UpdateCustomer(connection, customerDao.SelectCustomerByCode(Id));
             updateCustomer.ShowDialog();
+            customers = customerDao.SelectAllCustomers();
             DataGrid();
         }
 
         private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            
+            List<Customer> input = new List<Customer>();
+            for (int i = 0; i < customers.Count; i++)
+            {
+                if (customers[i].FullName.Contains(searchTextBox.Text))
+                {
+                    input.Add(customers[i]);
+                }
+            }
+            DataGrid(input);
         }
 
         private void SearchTextBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -73,6 +86,7 @@ namespace ServiceStore.EntityControl.ICustomer
         {
             NewCustomerForm newCustomer = new NewCustomerForm(connection);
             newCustomer.ShowDialog();
+            customers = customerDao.SelectAllCustomers();
             DataGrid();
         }
 
@@ -80,6 +94,7 @@ namespace ServiceStore.EntityControl.ICustomer
         {
             string Id = (grdCustomer.SelectedItem as Customer).C_Customer;
             customerDao.DeleteCustomer(Id);
+            customers = customerDao.SelectAllCustomers();
             DataGrid();
         }
     }

@@ -50,6 +50,11 @@ namespace ServiceStore.EntityControl.IProducer
             grdProducer.ItemsSource = producerDao.SelectAllProducers();
         }
 
+        public void DataGrid(List<Producer> producers)
+        {
+            grdProducer.ItemsSource = producers;
+        }
+
         private void UpdateBtn_Click(object sender, RoutedEventArgs e)
         {
             string Id = (grdProducer.SelectedItem as Producer).C_Producer;
@@ -65,10 +70,6 @@ namespace ServiceStore.EntityControl.IProducer
             DataGrid();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
@@ -79,7 +80,16 @@ namespace ServiceStore.EntityControl.IProducer
 
         private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            List<Producer> producers = producerDao.SelectAllProducers();
+            List<Producer> input = new List<Producer>();
+            for (int i = 0; i < producers.Count; i++)
+            {
+                if (producers[i].C_Producer.Contains(searchTextBox.Text))
+                {
+                    input.Add(producers[i]);
+                }
+            }
+            DataGrid(input);
         }
     }
 }

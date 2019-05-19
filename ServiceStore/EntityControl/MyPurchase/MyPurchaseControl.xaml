@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="ServiceStore.EntityControl.MyPurchase.MyPurchaseControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ServiceStore.EntityControl.MyPurchase"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid Background="#FFEEEEEE">
+        <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:1}">
+            <Grid HorizontalAlignment="Left" Width="800">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Height="300" Background="#FFF3F3F3" Margin="0,75,238,75" HorizontalAlignment="Right" Width="247" Grid.ColumnSpan="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="23*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="35*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="120*"/>
+                        <ColumnDefinition Width="92*"/>
+                        <ColumnDefinition Width="35*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.Effect>
+                        <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" ShadowDepth="1"/>
+                    </Grid.Effect>
+                    <DataGrid HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" AlternatingRowBackground="#FFC4B0B0" Height="345" AutoGenerateColumns="False" Name="grdPurchase" Margin="2,0,-425,-45" Grid.ColumnSpan="3" HorizontalAlignment="Center" Width="670" Grid.RowSpan="3" VerticalAlignment="Bottom">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn x:Name="Customer" Binding="{Binding Customer}" Width="100" Header="Customer"/>
+                            <DataGridTextColumn x:Name="Status" Binding="{Binding Status}" Width="100" Header="Status"/>
+                            <DataGridTextColumn x:Name="IMEI" Binding="{Binding IMEI}" Width="80" Header="IMEI"/>
+                            <DataGridTextColumn x:Name="TelephoneModel" Binding="{Binding TelephoneModel}" Width="130" Header="TelephoneModel"/>
+                            <DataGridTextColumn x:Name="Trademark" Binding="{Binding Trademark}" Width="90" Header="Trademark"/>
+                            <DataGridTextColumn x:Name="Service" Binding="{Binding Service}" Width="140" Header="Service"/>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+                <Button x:Name="Add" Content="Add New" HorizontalAlignment="Left" Height="35" Margin="60,25,0,0" Width="100" Click="Add_Click" VerticalAlignment="Top" ToolTip="Add new customer"/>
+                <TextBox x:Name="searchTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="77,35,0,0" TextWrapping="Wrap"
+                         MouseDoubleClick="SearchTextBox_MouseDoubleClick" VerticalAlignment="Top" Width="100" TextChanged="SearchTextBox_TextChanged" materialDesign:HintAssist.Hint="Search"/>
+                <Button x:Name="Report" Content="Get Report" HorizontalAlignment="Left" Height="35" Margin="180,25,0,0" Width="105" Click="Report_Click" VerticalAlignment="Top" ToolTip="Get report" Grid.ColumnSpan="2" RenderTransformOrigin="0.5,0.5">
+                    <Button.RenderTransform>
+                        <TransformGroup>
+                            <ScaleTransform/>
+                            <SkewTransform AngleY="-0.508"/>
+                            <RotateTransform/>
+                            <TranslateTransform Y="-0.443"/>
+                        </TransformGroup>
+                    </Button.RenderTransform>
+                </Button>
+            </Grid>
+        </materialDesign:TransitioningContent>
+    </Grid>
+</UserControl>

@@ -51,7 +51,7 @@ namespace ServiceStore.Dao
                 }
             }catch(Exception e)
             {
-                MessageBox.Show(e.ToString());
+                MessageBox.Show(e.Message);
             }
             finally
             {

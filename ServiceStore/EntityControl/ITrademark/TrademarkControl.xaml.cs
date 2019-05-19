@@ -24,12 +24,12 @@ namespace ServiceStore.EntityControl.ITrademark
     public partial class TrademarkControl : UserControl
     {
         SqlConnection connection;
-        TrademarkDao trademarkkDao;
+        TrademarkDao trademarkDao;
         public TrademarkControl(SqlConnection connection)
         {
             InitializeComponent();
             this.connection = connection;
-            trademarkkDao = new TrademarkDao(connection);
+            trademarkDao = new TrademarkDao(connection);
             DataGrid();
             if (DBConnection.id.Equals("Seller"))
             {
@@ -44,7 +44,7 @@ namespace ServiceStore.EntityControl.ITrademark
 
         public void DataGrid()
         {
-            grdTrademark.ItemsSource = trademarkkDao.SelectAllTrademark();
+            grdTrademark.ItemsSource = trademarkDao.SelectAllTrademark();
         }
 
         public void DataGrid(List<Trademark> trademarks)
@@ -54,7 +54,16 @@ namespace ServiceStore.EntityControl.ITrademark
 
         private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            List<Trademark> trademarks = trademarkDao.SelectAllTrademark();
+            List<Trademark> input = new List<Trademark>();
+            for (int i = 0; i < trademarks.Count; i++)
+            {
+                if (trademarks[i].Name.Contains(searchTextBox.Text))
+                {
+                    input.Add(trademarks[i]);
+                }
+            }
+            DataGrid(input);
         }
 
         private void Add_Click(object sender, RoutedEventArgs e)
@@ -67,7 +76,7 @@ namespace ServiceStore.EntityControl.ITrademark
         private void UpdateBtn_Click(object sender, RoutedEventArgs e)
         {
             string Id = (grdTrademark.SelectedItem as Trademark).C_Trademark;
-            Trademark trademark = trademarkkDao.SelectTrademarkById(Id);
+            Trademark trademark = trademarkDao.SelectTrademarkById(Id);
             UpdateTrademarkForm updateTrademark = new UpdateTrademarkForm(connection, trademark);
             updateTrademark.ShowDialog();
             DataGrid();
@@ -76,7 +85,7 @@ namespace ServiceStore.EntityControl.ITrademark
         private void DeleteBtn_Click(object sender, RoutedEventArgs e)
         {
             string Id = (grdTrademark.SelectedItem as Trademark).C_Trademark;
-            trademarkkDao.DeleteTrademark(Id);
+            trademarkDao.DeleteTrademark(Id);
             DataGrid();
         }
 

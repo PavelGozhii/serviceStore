@@ -25,8 +25,6 @@ namespace ServiceStore.Dao
             this.connection = connection;
         } 
 
-
-
         public List<Customer> SelectAllCustomers()
         {
             connection = DBConnection.Connect();

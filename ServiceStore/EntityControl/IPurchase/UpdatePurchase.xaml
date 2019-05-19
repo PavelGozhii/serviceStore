@@ -16,5 +16,7 @@
         <ComboBox x:Name="ComboBoxIMEI" HorizontalContentAlignment="Center" HorizontalAlignment="Center" Height="30" Margin="320,170,272,0" VerticalAlignment="Top" Width="200"/>
         <Button x:Name="CreateCustomer"  Content="Create New" HorizontalAlignment="Left" Margin="540,130,0,0" VerticalAlignment="Top" Width="85" Height="25" FontSize="10" Click="CreateCustomer_Click" ToolTip="Create new customer"/>
         <Button x:Name="CreateIMEI"  Content="CreateNew" HorizontalAlignment="Left" Margin="540,170,0,0" VerticalAlignment="Top" Width="85" Height="25" FontSize="10" Click="CreateIMEI_Click" ToolTip="Create new telephone"/>
+        <TextBox TextAlignment="Center" x:Name="StatusTextBox" HorizontalAlignment="Left" Height="25" Margin="320,210,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="200"/>
+        <TextBlock HorizontalAlignment="Center" Margin="235,215,457,0" TextWrapping="Wrap" VerticalAlignment="Top" RenderTransformOrigin="1.541,0.376" TextAlignment="Center" Width="100"><Run Text="Status"/></TextBlock>
     </Grid>
 </Window>

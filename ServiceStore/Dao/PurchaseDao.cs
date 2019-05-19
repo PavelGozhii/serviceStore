@@ -113,7 +113,7 @@ namespace ServiceStore.Dao
                 return true;
             }catch(Exception e)
             {
-                MessageBox.Show(e.ToString());
+                MessageBox.Show(e.Message);
                 return false;
             }
             finally

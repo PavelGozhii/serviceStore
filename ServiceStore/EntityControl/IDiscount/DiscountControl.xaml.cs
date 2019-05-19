@@ -1,20 +1,11 @@
 ﻿using ServiceStore.Dao;
 using ServiceStore.Model;
-using System;
+using ServiceStore.Services;
 using System.Collections.Generic;
 using System.Data.SqlClient;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace ServiceStore.EntityControl.IDiscount
 {
@@ -38,9 +29,21 @@ namespace ServiceStore.EntityControl.IDiscount
                 Name.Width = 220;
                 Size.Width = 90;
                 Starting.Width = 100;
-                Ending.Width = 100;
-               
+                Ending.Width = 100;              
             }
+            if (DBConnection.id.Equals("Customer"))
+            {
+                deleteBtn.Visibility = Visibility.Hidden;
+                UpdateBtn.Visibility = Visibility.Hidden;
+                Add.Visibility = Visibility.Hidden;
+                Name.Width = 250;
+                Size.Width = 120;
+                Starting.Width = 120;
+                Ending.Width = 120;
+                Report.Visibility = Visibility.Visible;
+            }
+
+
         }
 
         public void GridData()
@@ -70,7 +73,16 @@ namespace ServiceStore.EntityControl.IDiscount
 
         private void SearchTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            List<Discount> discounts = discountDao.SelectAllDiscounts();
+            List<Discount> input = new List<Discount>();
+            for (int i = 0; i < discounts.Count; i++)
+            {
+                if (discounts[i].Name.Contains(searchTextBox.Text))
+                {
+                    input.Add(discounts[i]);
+                }
+            }
+            GridData(input);
         }
 
         private void SearchTextBox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
@@ -83,6 +95,11 @@ namespace ServiceStore.EntityControl.IDiscount
             NewDiscountForm discountForm = new NewDiscountForm(connection);
             discountForm.ShowDialog();
             GridData();
+        }
+
+        private void Report_Click(object sender, RoutedEventArgs e)
+        {
+            PdfConvert.FullNotApp(grdDiscount, "DiscontList");
         }
     }
 }
