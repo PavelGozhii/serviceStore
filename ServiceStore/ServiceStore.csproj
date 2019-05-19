@@ -35,6 +35,33 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp, Version=5.5.13.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <HintPath>..\packages\iTextSharp.5.5.13\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignColors, Version=1.1.3.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignColors.1.1.3\lib\net45\MaterialDesignColors.dll</HintPath>
+    </Reference>
+    <Reference Include="MaterialDesignThemes.Wpf, Version=2.5.1.1345, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\MaterialDesignThemes.2.5.1\lib\net45\MaterialDesignThemes.Wpf.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.900.148\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
@@ -55,6 +82,250 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="CustomerWindow.xaml.cs">
+      <DependentUpon>CustomerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Dao\CustomerDao.cs" />
+    <Compile Include="Dao\DetailDao.cs" />
+    <Compile Include="Dao\DetailModelDao.cs" />
+    <Compile Include="Dao\DiscountDao.cs" />
+    <Compile Include="Dao\PriceListDao.cs" />
+    <Compile Include="Dao\ProducerDao.cs" />
+    <Compile Include="Dao\PurchaseDao.cs" />
+    <Compile Include="Dao\PurchaseServiceDao.cs" />
+    <Compile Include="Dao\PurchaseTelephoneInfo.cs" />
+    <Compile Include="Dao\ServiceDao.cs" />
+    <Compile Include="Dao\TelephoneDao.cs" />
+    <Compile Include="Dao\TelephoneInfoDao.cs" />
+    <Compile Include="Dao\TelephoneModelDao.cs" />
+    <Compile Include="Dao\TrademarkDao.cs" />
+    <Compile Include="EntityControl\ICustomer\CustomerControl.xaml.cs">
+      <DependentUpon>CustomerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EntityControl\ICustomer\NewCustomerForm.xaml.cs">
+      <DependentUpon>NewCustomerForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EntityControl\ICustomer\UpdateCustomer.xaml.cs">
+      <DependentUpon>UpdateCustomer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EntityControl\IDetailModel\DatailModelControl.xaml.cs">
+      <DependentUpon>DatailModelControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EntityControl\IDetailModel\NewDetailModel.xaml.cs">
+      <DependentUpon>NewDetailModel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EntityControl\IDetailModel\UpdateDetailModel.xaml.cs">
+      <DependentUpon>UpdateDetailModel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EntityControl\IDetail\DetailControl.xaml.cs">
+      <DependentUpon>DetailControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EntityControl\IDetail\NewDetailForm.xaml.cs">
+      <DependentUpon>NewDetailForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EntityControl\IDetail\UpdateDetailForm.xaml.cs">
+      <DependentUpon>UpdateDetailForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EntityControl\IDiscount\DiscountControl.xaml.cs">
+      <DependentUpon>DiscountControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EntityControl\IDiscount\NewDiscountForm.xaml.cs">
+      <DependentUpon>NewDiscountForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EntityControl\IProducer\AddNewProducer.xaml.cs">
+      <DependentUpon>AddNewProducer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EntityControl\IProducer\ProducerControl.xaml.cs">
+      <DependentUpon>ProducerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EntityControl\IProducer\UpdateProducer.xaml.cs">
+      <DependentUpon>UpdateProducer.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EntityControl\IPurchase\PurchaseForm.xaml.cs">
+      <DependentUpon>PurchaseForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EntityControl\IPurchase\UpdatePurchase.xaml.cs">
+      <DependentUpon>UpdatePurchase.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EntityControl\IService\ServiceContr.xaml.cs">
+      <DependentUpon>ServiceContr.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EntityControl\IService\ServiceForm.xaml.cs">
+      <DependentUpon>ServiceForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EntityControl\ITelephoneModel\TelephoneModelControl.xaml.cs">
+      <DependentUpon>TelephoneModelControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EntityControl\ITelephoneModel\TelephoneModelForm.xaml.cs">
+      <DependentUpon>TelephoneModelForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EntityControl\ITelephone\TelephoneControl.xaml.cs">
+      <DependentUpon>TelephoneControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EntityControl\ITelephone\TelephoneForm.xaml.cs">
+      <DependentUpon>TelephoneForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EntityControl\ITrademark\NewTrademarkForm.xaml.cs">
+      <DependentUpon>NewTrademarkForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EntityControl\ITrademark\TrademarkControl.xaml.cs">
+      <DependentUpon>TrademarkControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EntityControl\ITrademark\UpdateTrademarkForm.xaml.cs">
+      <DependentUpon>UpdateTrademarkForm.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EntityControl\MyPurchase\MyPurchaseControl.xaml.cs">
+      <DependentUpon>MyPurchaseControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EntityControl\NewRapairControl.xaml.cs">
+      <DependentUpon>NewRapairControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EntityControl\IPriceList\PriceListControl.xaml.cs">
+      <DependentUpon>PriceListControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EntityControl\ITelephoneList\TelephoneListControl.xaml.cs">
+      <DependentUpon>TelephoneListControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="LoginWindow.cs" />
+    <Compile Include="LoginWindow.xaml.cs">
+      <DependentUpon>LoginWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EntityControl\IPurchase\.xaml.cs">
+      <DependentUpon>PurchaseControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Model\PriceList.cs" />
+    <Compile Include="Model\PurchaseInfo.cs" />
+    <Compile Include="Model\PurchaseService.cs" />
+    <Compile Include="Model\TelephoneInfo.cs" />
+    <Compile Include="SellerWindow.xaml.cs">
+      <DependentUpon>SellerWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Services\PdfConvert.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Page Include="CustomerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EntityControl\ICustomer\CustomerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EntityControl\ICustomer\NewCustomerForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EntityControl\ICustomer\UpdateCustomer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EntityControl\IDetailModel\DatailModelControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EntityControl\IDetailModel\NewDetailModel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EntityControl\IDetailModel\UpdateDetailModel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EntityControl\IDetail\DetailControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EntityControl\IDetail\NewDetailForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EntityControl\IDetail\UpdateDetailForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EntityControl\IDiscount\DiscountControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EntityControl\IDiscount\NewDiscountForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EntityControl\IProducer\AddNewProducer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EntityControl\IProducer\ProducerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EntityControl\IProducer\UpdateProducer.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EntityControl\IPurchase\PurchaseForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EntityControl\IPurchase\UpdatePurchase.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EntityControl\IService\ServiceContr.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EntityControl\IService\ServiceForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EntityControl\ITelephoneModel\TelephoneModelControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EntityControl\ITelephoneModel\TelephoneModelForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EntityControl\ITelephone\TelephoneControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EntityControl\ITelephone\TelephoneForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EntityControl\ITrademark\NewTrademarkForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EntityControl\ITrademark\TrademarkControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EntityControl\ITrademark\UpdateTrademarkForm.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EntityControl\MyPurchase\MyPurchaseControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EntityControl\NewRapairControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EntityControl\IPriceList\PriceListControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EntityControl\ITelephoneList\TelephoneListControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="LoginWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -63,12 +334,31 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Dao\DBConnection.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="EntityControl\IPurchase\PurchaseControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SellerWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Model\Customer.cs" />
+    <Compile Include="Model\Detail.cs" />
+    <Compile Include="Model\DetailModel.cs" />
+    <Compile Include="Model\Discount.cs" />
+    <Compile Include="Model\Producer.cs" />
+    <Compile Include="Model\Purchase.cs" />
+    <Compile Include="Model\Service.cs" />
+    <Compile Include="Model\Telephone.cs" />
+    <Compile Include="Model\TelephoneModel.cs" />
+    <Compile Include="Model\Trademark.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -86,13 +376,32 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="packages.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Resources\Royal Arial Regular.ttf" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

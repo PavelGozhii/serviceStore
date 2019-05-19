@@ -1,0 +1,26 @@
+﻿<Window x:Class="ServiceStore.EntityControl.ICustomer.UpdateCustomer"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ServiceStore.EntityControl.ICustomer"
+        mc:Ignorable="d"
+        Title="UpdateCustomer" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+    <Grid Background="#FFEEEEEE">
+        <TextBox x:Name="LastName" HorizontalAlignment="Center" Height="25" Margin="390, 75, 282, 0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextAlignment="Center" Visibility="Hidden"/>
+        <TextBlock Text="Login" Margin="280,80,405,0" TextWrapping="Wrap" HorizontalAlignment="Center" VerticalAlignment="Top" TextAlignment="Center" Height="25" Width="105"/>
+        <TextBox x:Name="CustomerTextBox" HorizontalAlignment="Center" Height="25" Margin="390,75,282,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Center" Margin="280,130,405,0" TextWrapping="Wrap" Text="FullName" VerticalAlignment="Top" Width="105" Height="25" TextAlignment="Center"/>
+        <TextBox x:Name="FullNameTextBox" HorizontalAlignment="Center" Height="25" Margin="390,125,282,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Center" Margin="200,180,487,0" TextWrapping="Wrap" Text="DateOfBirth" VerticalAlignment="Top" Width="105" Height="25" TextAlignment="Center" RenderTransformOrigin="0.324,0.4"/>
+        <TextBlock HorizontalAlignment="Center" Margin="280, 230, 405, 0" TextWrapping="Wrap" Text="Address" VerticalAlignment="Top" Width="105" Height="25" TextAlignment="Center"/>
+        <TextBox x:Name="AddressTextBOx" HorizontalAlignment="Center" Height="25" Margin="390,225,282,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" TextAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Left" Height="25" Margin="300,180,0,0" TextWrapping="Wrap" Text="Day" VerticalAlignment="Top" Width="50" TextAlignment="Center"/>
+        <ComboBox x:Name="ComboBoxDay" HorizontalAlignment="Left" Margin="350,175,0,0" VerticalAlignment="Top" Width="25" ScrollViewer.VerticalScrollBarVisibility="Disabled"  HorizontalContentAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Left" Height="25" Margin="380,180,0,0" TextWrapping="Wrap" Text="Month" VerticalAlignment="Top" Width="50" TextAlignment="Center" RenderTransformOrigin="0.3,0.6"/>
+        <ComboBox x:Name="ComboBoxMonth" HorizontalAlignment="Left" Height="25" Margin="435,175,0,0" VerticalAlignment="Top" Width="30" ScrollViewer.VerticalScrollBarVisibility="Disabled"  HorizontalContentAlignment="Center"/>
+        <TextBlock HorizontalAlignment="Left" Height="25" Margin="470,180,0,0" TextWrapping="Wrap" Text="Year" VerticalAlignment="Top" Width="50" TextAlignment="Center" RenderTransformOrigin="0.4,0.6"/>
+        <ComboBox x:Name="ComboBoxYear" HorizontalAlignment="Left" Height="25" Margin="520,175,0,0" VerticalAlignment="Top" Width="45" RenderTransformOrigin="0.3,0.4" HorizontalContentAlignment="Center" ScrollViewer.VerticalScrollBarVisibility="Disabled" />
+        <Button x:Name="UpdateBtn" Content="Update" HorizontalAlignment="Center" Margin="360,298,332,0" VerticalAlignment="Top" Width="100" Click="UpdateBtn_Click" ToolTip="Update customer"/>
+    </Grid>
+</Window>

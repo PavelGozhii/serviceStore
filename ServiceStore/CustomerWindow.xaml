@@ -1,12 +1,12 @@
-﻿<Window x:Class="ServiceStore.MainWindow"
+﻿<Window x:Class="ServiceStore.CustomerWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         xmlns:local="clr-namespace:ServiceStore"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-      Title="ServiceStore" Height="600" Width="1024" WindowStartupLocation="CenterScreen" WindowStyle="None" >
+       Title="ServiceStore" Height="600" Width="1024" WindowStartupLocation="CenterScreen" WindowStyle="None" >
     <Grid Background="#FFEEEEEE" MouseDown="Grid_MouseDown">
         <StackPanel VerticalAlignment="Top">
             <Grid Background="#FF0069C0" Height="10"/>
@@ -30,11 +30,9 @@
                 </StackPanel>
             </Grid>
         </StackPanel>
-
         <Grid Margin="250 55 0 0">
             <Grid x:Name="GridPrincipal" HorizontalAlignment="Center" VerticalAlignment="Center"/>
         </Grid>
-
         <Grid Width="250" HorizontalAlignment="Left" Background="#FF222222">
             <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:0.2}">
                 <Grid x:Name="GridCursor" Margin="0 10 0 0" Background="#FF0069C0" Width="10" HorizontalAlignment="Left" Height="0" VerticalAlignment="Top"/>
@@ -42,14 +40,14 @@
             <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" x:Name="ListViewMenu" Margin="0,10" Foreground="LightGray" FontFamily="Champagne &amp; Limousines" FontSize="18" SelectionChanged="ListViewMenu_SelectionChanged" SelectedIndex="0">
                 <ListViewItem Height="50">
                     <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="ServiceToolbox" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
-                        <TextBlock Text="Service" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
+                        <materialDesign:PackIcon Kind="User" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock Text="My Purchase" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
                     </StackPanel>
                 </ListViewItem>
                 <ListViewItem Height="50">
                     <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="Money" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
-                        <TextBlock Text="Purchase" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
+                        <materialDesign:PackIcon Kind="ViewList" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock Text="Price List" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
                     </StackPanel>
                 </ListViewItem>
                 <ListViewItem Height="50">
@@ -60,48 +58,17 @@
                 </ListViewItem>
                 <ListViewItem Height="50">
                     <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="SmartphoneAndroid" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
-                        <TextBlock Text="Telephone" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
+                        <materialDesign:PackIcon Kind="FiberNew" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
+                        <TextBlock Text="New Repair" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
                     </StackPanel>
                 </ListViewItem>
                 <ListViewItem Height="50">
                     <StackPanel Orientation="Horizontal">
                         <materialDesign:PackIcon Kind="Telephone" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
-                        <TextBlock Text="TelephoneModel" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
-                    </StackPanel>
-                </ListViewItem>
-                <ListViewItem Height="50">
-                    <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="Details" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
-                        <TextBlock Text="Detail" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
-                    </StackPanel>
-                </ListViewItem>
-                <ListViewItem Height="50">
-                    <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="Battery" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
-                        <TextBlock Text="DetailModel" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
-                    </StackPanel>
-                </ListViewItem>
-                <ListViewItem Height="50">
-                    <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind= "Trademark" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
-                        <TextBlock Text="Trademark" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
-                    </StackPanel>
-                </ListViewItem>
-                <ListViewItem Height="50">
-                    <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind= "Factory" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
-                        <TextBlock Text="Producer" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
-                    </StackPanel>
-                </ListViewItem>
-                <ListViewItem Height="50">
-                    <StackPanel Orientation="Horizontal">
-                        <materialDesign:PackIcon Kind="AccountStar" Width="30" Height="30" VerticalAlignment="Center" Margin="5"/>
-                        <TextBlock Text="Customer" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
+                        <TextBlock Text="TelephoneList" FontSize="17" VerticalAlignment="Center" Margin="20 0"/>
                     </StackPanel>
                 </ListViewItem>
             </ListView>
         </Grid>
-
     </Grid>
 </Window>

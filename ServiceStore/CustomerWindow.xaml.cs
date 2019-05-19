@@ -1,27 +1,24 @@
 ﻿using ServiceStore.Dao;
-using ServiceStore.EntityControl.ICustomer;
-using ServiceStore.EntityControl.IDetail;
-using ServiceStore.EntityControl.IDetailModel;
 using ServiceStore.EntityControl.IDiscount;
-using ServiceStore.EntityControl.IProducer;
-using ServiceStore.EntityControl.IService;
 using ServiceStore.EntityControl.ITelephone;
-using ServiceStore.EntityControl.ITelephoneModel;
-using ServiceStore.EntityControl.ITrademark;
+using ServiceStore.EntityControl.IPriceList;
 using System.Data.SqlClient;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
+using ServiceStore.EntityControl;
+using ServiceStore.EntityControl.ITelephoneList;
+using ServiceStore.EntityControl.MyPurchase;
 
 namespace ServiceStore
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для CustomerWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class CustomerWindow : Window
     {
         SqlConnection connection = DBConnection.Connect();
-        public MainWindow(SqlConnection connection)
+        public CustomerWindow(SqlConnection connection)
         {
             this.connection = connection;
             InitializeComponent();
@@ -41,16 +38,17 @@ namespace ServiceStore
         {
             int index = ListViewMenu.SelectedIndex;
             MoveCursorMenu(index);
-
+            DBConnection.id = "Customer";
+            DBConnection.password = "Customer";
             switch (index)
             {
                 case 0:
                     GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new ServiceContr(connection));
+                    GridPrincipal.Children.Add(new MyPurchaseControl(connection));
                     break;
-                case 1:
+                case 1:                   
                     GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new UserControlInicio(connection));
+                    GridPrincipal.Children.Add(new PriceListControl(connection));
                     break;
                 case 2:
                     GridPrincipal.Children.Clear();
@@ -58,31 +56,11 @@ namespace ServiceStore
                     break;
                 case 3:
                     GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new TelephoneControl(connection));
+                    GridPrincipal.Children.Add(new NewRapairControl(connection));
                     break;
                 case 4:
                     GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new TelephoneModelControl(connection));
-                    break;
-                case 5:
-                    GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new DetailControl(connection));
-                    break;
-                case 6:
-                    GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new DatailModelControl(connection));
-                    break;
-                case 7:
-                    GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new TrademarkControl(connection));
-                    break;
-                case 8:
-                    GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new ProducerControl(connection));
-                    break;
-                case 9:
-                    GridPrincipal.Children.Clear();
-                    GridPrincipal.Children.Add(new CustomerControl(connection));
+                    GridPrincipal.Children.Add(new TelephoneListControl(connection));
                     break;
                 default:
                     break;

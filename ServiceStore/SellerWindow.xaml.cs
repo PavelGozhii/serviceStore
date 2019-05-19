@@ -16,13 +16,14 @@ using System.Windows.Input;
 namespace ServiceStore
 {
     /// <summary>
-    /// Логика взаимодействия для MainWindow.xaml
+    /// Логика взаимодействия для SellerWindow.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SellerWindow : Window
     {
         SqlConnection connection = DBConnection.Connect();
-        public MainWindow(SqlConnection connection)
+        public SellerWindow(SqlConnection connection)
         {
+            
             this.connection = connection;
             InitializeComponent();
         }
@@ -41,7 +42,8 @@ namespace ServiceStore
         {
             int index = ListViewMenu.SelectedIndex;
             MoveCursorMenu(index);
-
+            DBConnection.id = "Seller";
+            DBConnection.password = "Seller";
             switch (index)
             {
                 case 0:
@@ -111,3 +113,4 @@ namespace ServiceStore
         }
     }
 }
+

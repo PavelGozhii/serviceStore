@@ -1,0 +1,66 @@
+﻿<UserControl x:Class="ServiceStore.EntityControl.IDetailModel.DatailModelControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ServiceStore.EntityControl.IDetailModel"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <materialDesign:TransitioningContent x:Name="TrainsitionigContentSlide" OpeningEffect="{materialDesign:TransitionEffect SlideInFromLeft, Duration=0:0:1}">
+            <Grid HorizontalAlignment="Left" Width="800">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Height="300" Background="#FFF3F3F3" Margin="0,75,238,75" HorizontalAlignment="Right" Width="247" Grid.ColumnSpan="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="23*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="35*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="120*"/>
+                        <ColumnDefinition Width="92*"/>
+                        <ColumnDefinition Width="35*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.Effect>
+                        <DropShadowEffect BlurRadius="20" Color="#FFDEDEDE" ShadowDepth="1"/>
+                    </Grid.Effect>
+                    <DataGrid HorizontalScrollBarVisibility="Hidden" VerticalScrollBarVisibility="Hidden" AlternatingRowBackground="#FFC4B0B0" Height="345" AutoGenerateColumns="False" Name="grdDetailModel" Margin="2,0,-410,-45" Grid.ColumnSpan="3" HorizontalAlignment="Center" Width="655" Grid.RowSpan="3" VerticalAlignment="Bottom">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn x:Name="DetailModel" Binding="{Binding C_DetailModel}" Width="140" Header="DetailModel"/>
+                            <DataGridTextColumn x:Name="Price" Binding="{Binding Price}" Width="60" Header="Price"/>
+                            <DataGridTextColumn x:Name="TelephoneModel" Binding="{Binding C_TelephoneModel}" Width="120" Header="TelephoneModel"/>
+                            <DataGridTextColumn x:Name="Detail" Binding="{Binding C_Detail}" Width="110" Header="Detail"/>
+                            <DataGridTemplateColumn x:Name="updateBtn">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Button x:Name="updateBtn" Content="Update" Click="UpdateBtn_Click" ToolTip="Update detailModel"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                            <DataGridTemplateColumn x:Name="deleteBtn">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <StackPanel Orientation="Horizontal">
+                                            <Button x:Name="deleteBtn" Content="Delete" Click="DeleteBtn_Click" ToolTip="Delete detailModel"/>
+                                        </StackPanel>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+
+                </Grid>
+                <Button x:Name="Add" Content="Add New" HorizontalAlignment="Left" Height="35" Margin="60,30,0,0" Width="95" Click="Add_Click" VerticalAlignment="Top" ToolTip="Add new"/>
+                <TextBox x:Name="searchTextBox" Grid.Column="2" HorizontalAlignment="Left" Height="25" Margin="62,35,0,0" TextWrapping="Wrap" materialDesign:HintAssist.Hint="Search"
+                         MouseDoubleClick="SearchTextBox_MouseDoubleClick" VerticalAlignment="Top" Width="100" TextChanged="SearchTextBox_TextChanged"/>
+            </Grid>
+        </materialDesign:TransitioningContent>
+    </Grid>
+</UserControl>
